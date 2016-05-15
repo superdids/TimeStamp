@@ -1,0 +1,176 @@
+.navbar-brand-centered {
+	position: absolute;
+	left: 50%;
+	display: block;
+	width: 160px;
+	text-align: center;
+}
+
+.navbar>.container .navbar-brand-centered, .navbar>.container-fluid .navbar-brand-centered
+	{
+	margin-left: -80px;
+}
+
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
+
+.wrapper {    
+	margin-top: 80px;
+	margin-bottom: 20px;
+}
+
+.form-signin {
+  max-width: 420px;
+  padding: 30px 38px 66px;
+  margin: 0 auto;
+  background-color: #eee;
+  border: 3px dotted rgba(0,0,0,0.1);  
+  }
+
+.form-signin-heading {
+  text-align:center;
+  margin-bottom: 30px;
+}
+
+.form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+}
+
+input[type="text"] {
+  margin-bottom: 0px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+input[type="password"] {
+  margin-bottom: 20px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.colorgraph {
+  height: 7px;
+  border-top: 0;
+  background: #c4e17f;
+  border-radius: 5px;
+  background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+}
+
+
+/* ANGULAR BOOTSTRAP CALENDAR CUSTOMIZATION */
+.cal-row-fluid [class*="cal-cell"] {
+  display: block;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  margin-left: 0%;
+  *margin-left: 1%;
+}
+
+.cal-week-box .cal-offset8,
+.cal-row-fluid .cal-offset8,
+.cal-row-fluid .cal-offset8:first-child {
+  margin-left: 97.6%;
+/*   *margin-left: 99.89339019189765%; */
+}
+
+.cal-week-box .cal-offset7,
+.cal-row-fluid .cal-offset7,
+.cal-row-fluid .cal-offset7:first-child {
+  margin-left: 85.2%;
+/*   *margin-left: 99.89339019189765%; */
+}
+.cal-week-box .cal-offset6,
+.cal-row-fluid .cal-offset6,
+.cal-row-fluid .cal-offset6:first-child {
+  margin-left: 73.05%;
+/*   *margin-left: 85.60767590618336%; */
+}
+.cal-week-box .cal-offset5,
+.cal-row-fluid .cal-offset5,
+.cal-row-fluid .cal-offset5:first-child {
+  margin-left: 60.85%;
+/*   *margin-left: 71.32196162046907%; */
+}
+.cal-week-box .cal-offset4,
+.cal-row-fluid .cal-offset4,
+.cal-row-fluid .cal-offset4:first-child {
+  margin-left: 48.72%;
+/*   *margin-left: 57.03624733475479%; */
+}
+.cal-week-box .cal-offset3,
+.cal-row-fluid .cal-offset3,
+.cal-row-fluid .cal-offset3:first-child {
+  margin-left: 36.52%;
+/*   *margin-left: 42.750533049040506%; */
+}
+.cal-week-box .cal-offset2,
+.cal-row-fluid .cal-offset2,
+.cal-row-fluid .cal-offset2:first-child {
+  margin-left: 24.4%;
+/*   *margin-left: 28.46481876332622%; */
+}
+.cal-week-box .cal-offset1,
+.cal-row-fluid .cal-offset1,
+.cal-row-fluid .cal-offset1:first-child {
+  margin-left: 12.2%;
+/*   *margin-left: 14.17910447761194%; */
+}
+
+.cal-row-fluid .cal-cell1 {
+  width: 12.5%;
+	*width: 12.5%; 
+}
+
+.cal-row-fluid .cal-cell-event8 {
+	width: 11.98%;
+	*width: 11.98%;
+}
+
+.cal-row-fluid .cal-cell-event7 {
+	width: 11.98%;
+	*width: 11.98%;
+}
+
+.cal-row-fluid .cal-cell-event6 {
+	width: 11.98%;
+	*width: 11.98%;
+}
+
+.cal-row-fluid .cal-cell-event5 {
+	width: 11.98%;
+	*width: 11.98%;
+}
+
+.cal-row-fluid .cal-cell-event4 {
+	width: 11.98%;
+	*width: 11.98%;
+}
+
+.cal-row-fluid .cal-cell-event3 {
+	width: 11.98%;
+	*width: 11.98%;
+}
+
+.cal-row-fluid .cal-cell-event2 {
+	width: 11.98%;
+	*width: 11.98%;
+}
+
+.cal-row-fluid .cal-cell-event1 {
+	width: 12%;
+	*width: 12%;
+}
