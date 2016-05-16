@@ -1,0 +1,22 @@
+<div
+  class="cal-context"
+  ng-switch="vm.view"
+  ng-if="vm.templatesLoaded">
+
+  <div class="alert alert-danger" ng-switch-default>The value passed to the view attribute of the calendar is not set</div>
+
+  <div class="alert alert-danger" ng-hide="vm.viewDate">The value passed to view-date attribute of the calendar is not set</div>
+
+  <time-stamp-calendar-week
+    users="vm.users"
+    view-date="vm.viewDate"
+    on-event-click="vm.onEventClick"
+    on-event-times-changed="vm.onEventTimesChanged"
+    day-view-start="vm.dayViewStart"
+    day-view-end="vm.dayViewEnd"
+    day-view-split="vm.dayViewSplit"
+    on-timespan-click="vm.onTimespanClick"
+    ng-switch-when="week">
+  </time-stamp-calendar-week>
+
+</div>

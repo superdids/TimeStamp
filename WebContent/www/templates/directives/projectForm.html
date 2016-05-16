@@ -1,0 +1,52 @@
+<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+	<form role="form">
+		<fieldset>
+			<legend class="text-center">Add a project</legend>
+
+			<div class="form-group">
+				<label for="projectname">Project name</label> <input type="text"
+					ng-model="name" class="form-control">
+			</div>
+
+			<div class="form-group">
+				<label for="users">Select users</label> <br />
+				<div class="btn-group">
+
+					<label class="btn btn-primary"
+						ng-repeat="user in users track by $index"
+						ng-click="toggleSelectedUser(user)"
+						ng-class="{ active: added(user.userName) > -1 }">
+						{{user.name}}</label>
+
+				</div>
+			</div>
+
+			<div class="form-group" ng-show="selectedUsers.length > 0">
+				<label for="schedule">Now, mock up that schedule!</label>
+				<calendar-navigation view-date="viewDate"></calendar-navigation>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Name \ Days</th>
+							<th ng-repeat="day in currentWeek.days track by $index">{{day.format('dddd')}}</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="user in currentWeek.users">
+							<td>{{user.name}}</td>
+							<td ng-repeat="day in currentWeek.days track by $index">
+							<input type="number" min="1" max="23"
+					ng-model="user.days[$index]" class="form-control">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<button type="submit" ng-click="submitProject()"
+				class="btn btn-primary btn-block">Submit</button>
+		</fieldset>
+	</form>
+</div>
+
+<pre></pre>

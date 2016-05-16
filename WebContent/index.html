@@ -6,7 +6,7 @@
 
 <link rel="stylesheet" href="node_modules/angular-bootstrap-calendar/dist/css/angular-bootstrap-calendar.css">
 <link rel="stylesheet" href="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css">
-<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="www/css/bootstrap.css">
 <link rel="stylesheet" href="www/css/style.css">
 
 <!-- JavaScript frameworks -->
@@ -19,8 +19,33 @@
 <script type="text/javascript" src="node_modules/angular-touch/angular-touch.min.js"></script>
 <script type="text/javascript" src="node_modules/angular-chartjs/dist/angular-chartjs.min.js"></script>
 
+<!-- The application entry point -->
+<script type="text/javascript" src="www/js/app.js"></script>
+
+<!-- Customized directives -->
+<script type="text/javascript" src="www/js/custom/calendarDirective.js"></script>
+<script type="text/javascript" src="www/js/custom/calendarWeekDirective.js"></script>
+
+<script type="text/javascript" src="www/js/directives/calendarNavigation.js"></script>
+<script type="text/javascript" src="www/js/directives/projectForm.js"></script>
+<script type="text/javascript" src="www/js/directives/taskForm.js"></script>
+
+<!-- Controllers -->
+<script type="text/javascript" src="www/js/controllers/login.js"></script>
+<script type="text/javascript" src="www/js/controllers/timeSheet.js"></script>
+
+<!-- Services -->
+<script type="text/javascript" src="www/js/services/timeStampConfig.js"></script>
+<script type="text/javascript" src="www/js/services/authorization.js"></script>
+<script type="text/javascript" src="www/js/services/login.js"></script>
+<script type="text/javascript" src="www/js/services/dataHTTP.js"></script>
+<script type="text/javascript" src="www/js/services/postPreparator.js"></script>
+
 </head>
-<body>
+<body ng-app="app">
+
+	<div ui-view name="header"></div>
+	<div ui-view name="content"></div>
 
 </body>
 </html>
