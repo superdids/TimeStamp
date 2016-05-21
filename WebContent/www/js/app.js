@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ui.router', 'ui.bootstrap', 'mwl.calendar', 'chartjs']);
+var app = angular.module('app', ['ui.router', 'ui.bootstrap', 'mwl.calendar', 'chartjs', 'swaggerUi', 'ngSanitize']);
 
 app.config(function($urlRouterProvider, $stateProvider, moment, calendarConfig) {
 
@@ -24,6 +24,14 @@ app.config(function($urlRouterProvider, $stateProvider, moment, calendarConfig) 
 			'content@': {
 				templateUrl: 'www/templates/timeStamp.html',
 				controller: 'TimeSheetController'
+			}
+		}
+	}).state('app.api', {
+		url: '/API',
+		views: {
+			'content@': {
+				templateUrl: 'www/templates/api.html',
+				controller: 'APIController'
 			}
 		}
 	});
@@ -60,3 +68,4 @@ app.run(function($rootScope, $state, AuthorizationService, DataHTTPService) {
 		}
 	});
 });
+

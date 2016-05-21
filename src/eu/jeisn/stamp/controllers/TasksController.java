@@ -1,8 +1,6 @@
 package eu.jeisn.stamp.controllers;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -11,7 +9,9 @@ import javax.ws.rs.core.MediaType;
 
 import eu.jeisn.stamp.dao.UserDAO;
 import eu.jeisn.stamp.models.User;
+import io.swagger.annotations.Api;
 
+@Api(value="/Tasks")
 @Path("/Tasks")
 public class TasksController {
 

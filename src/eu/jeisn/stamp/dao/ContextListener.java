@@ -5,8 +5,7 @@ import javax.persistence.Persistence;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
-//import javax.servlet.ServletContextEvent;
-//import javax.servlet.ServletContextListener;
+
 
 /**
  * Application Lifecycle Listener implementation class ContextListener

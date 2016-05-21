@@ -24,10 +24,22 @@ import eu.jeisn.stamp.models.ParticipationId;
 import eu.jeisn.stamp.models.Project;
 import eu.jeisn.stamp.models.Task;
 import eu.jeisn.stamp.models.User;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 
+@Api(value="/Projects")
 @Path("/Projects")
 public class ProjectsController {
 
+	@ApiOperation(
+			value="Get all projects",
+			response=ProjectView.class)
+	@ApiResponses(value={
+			@ApiResponse(code=200, message="Success")
+	})
 	@GET
 	@Path("/")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -38,11 +50,21 @@ public class ProjectsController {
 		return Response.status(200).entity(projects).build();
 	}
 	
+	
+	@ApiOperation(
+			value="Post a project",
+			response = ProjectView.class)
+	@ApiResponses(value={
+			@ApiResponse(code=400, message="No users or tasks were linked to the project"),
+			@ApiResponse(code=200, message="Success"),
+	})
 	@POST
 	@Path("/")
 	@Produces(MediaType.APPLICATION_JSON) 
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response postProject(ProjectPost data) {
+	public Response postProject(@ApiParam(
+			value="Project data with associated users and tasks",
+			required=true) ProjectPost data) {
 		Project project = new Project(data.name, data.toDate, data.fromDate);
 		project = new ProjectDAO().create(project);
 		System.out.println(data.users);

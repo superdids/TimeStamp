@@ -1,0 +1,13 @@
+<!-- <h3 class="dispInline">Rest Json file:</h3> -->
+<!--         <form name="urlForm" ng-submit="urlForm.$valid&&(swaggerUrl=url)" class="form-inline dispInline"> -->
+<!--             <input type="url" placeholder="swagger URL" class="form-control" id="url" name="url" ng-model="url" required style="width:400px"> -->
+<!--             <button type="submit" class="btn btn-primary">explore</button> -->
+<!--         </form> -->
+
+<div ng-show="isLoading">loading ...</div>
+        <div swagger-ui url="swaggerUrl" loading="isLoading" error-handler="myErrorHandler" api-explorer="true" parser="json"></div>
+</div>
+       
+       <pre class="danger" ng-hide="error === ''">{{error}}</pre>
+        
+     
