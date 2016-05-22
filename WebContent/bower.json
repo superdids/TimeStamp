@@ -1,0 +1,21 @@
+{
+  "name": "stamp",
+  "description": "TimeStamp application",
+  "main": "index.js",
+  "authors": [
+    "superdids <didrik.aubert@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/superdids/TimeStamp",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-chart.js": "^0.10.2"
+  }
+}

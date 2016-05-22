@@ -28,7 +28,7 @@ public class ProjectDAO extends DAO<Project> {
 			toRet = q.getResultList();
 			transaction.commit();
 		} catch(Exception e) {
-			System.err.println("[ProjectDAO]: readAll");
+			System.err.println("[ProjectDAO]: readAllByUser");
 			if(transaction != null) 
 				transaction.rollback();
 		} finally {

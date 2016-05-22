@@ -24,6 +24,8 @@ import eu.jeisn.stamp.models.ParticipationId;
 import eu.jeisn.stamp.models.Project;
 import eu.jeisn.stamp.models.Task;
 import eu.jeisn.stamp.models.User;
+import eu.jeisn.stamp.zzTest.ProjectWithUsers;
+import eu.jeisn.stamp.zzTest.UserWithTasks;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -44,10 +46,26 @@ public class ProjectsController {
 	@Path("/")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getProjects() {
-		List<ProjectView> projects = new ArrayList<>();  
-		new ProjectDAO().getStream()
-			.forEach(x -> projects.add(new ProjectView(x)));;
-		return Response.status(200).entity(projects).build();
+		
+		List<Project> projects = new ProjectDAO().readAll();
+		if(projects == null || projects.size() <= 0) {
+			return Response.status(404).build();
+		}
+		List<ProjectWithUsers> toRet = new ArrayList<>();
+		for(Project project : projects) {
+			ProjectWithUsers proj = new ProjectWithUsers(project);
+			List<User> users = new UserDAO().readAllByProject(10);
+			if(users != null && users.size() > 0) {
+				for(User user : users) {
+					List<Task> tasks = new TaskDAO().readAllByUserProject(user.getUserName(), project.getId());
+					proj.addUser(user, tasks);
+				}
+			}
+			toRet.add(proj);
+		}
+		
+		return Response.status(200).entity(toRet).build();
+
 	}
 	
 	

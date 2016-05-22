@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css">
 <link rel="stylesheet" href="www/css/bootstrap.css">
 <link rel="stylesheet" href="www/css/style.css">
+<link rel="stylesheet" href="bower_components/angular-chart.js/dist/angular-chart.min.css">
 
 <!-- Swagger CSS -->
 <link rel="stylesheet" href="node_modules/angular-swagger-ui/dist/css/swagger-ui.min.css">
@@ -20,8 +21,13 @@
 <script type="text/javascript" src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
 <script type="text/javascript" src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
 <script type="text/javascript" src="node_modules/angular-touch/angular-touch.min.js"></script>
-<script type="text/javascript" src="node_modules/angular-chartjs/dist/angular-chartjs.min.js"></script>
 <script type="text/javascript" src="node_modules/angular-sanitize/angular-sanitize.min.js"></script>
+<script type="text/javascript" src="node_modules/angular-google-chart/ng-google-chart.min.js"></script>
+
+<script type="text/javascript" src="bower_components/Chart.js/Chart.js"></script>
+<script type="text/javascript" src="bower_components/angular-chart.js/dist/angular-chart.min.js"></script>
+
+
 
 <!-- Swagger JS -->
 <script type="text/javascript" src="node_modules/angular-swagger-ui/dist/scripts/swagger-ui.min.js"></script>
@@ -36,11 +42,13 @@
 <script type="text/javascript" src="www/js/directives/calendarNavigation.js"></script>
 <script type="text/javascript" src="www/js/directives/projectForm.js"></script>
 <script type="text/javascript" src="www/js/directives/taskForm.js"></script>
+<script type="text/javascript" src="www/js/directives/charts.js"></script>
 
 <!-- Controllers -->
 <script type="text/javascript" src="www/js/controllers/login.js"></script>
 <script type="text/javascript" src="www/js/controllers/timeSheet.js"></script>
 <script type="text/javascript" src="www/js/controllers/api.js"></script>
+<script type="text/javascript" src="www/js/controllers/header.js"></script>
 
 <!-- Services -->
 <script type="text/javascript" src="www/js/services/timeStampConfig.js"></script>
@@ -48,6 +56,10 @@
 <script type="text/javascript" src="www/js/services/login.js"></script>
 <script type="text/javascript" src="www/js/services/dataHTTP.js"></script>
 <script type="text/javascript" src="www/js/services/postPreparator.js"></script>
+<script type="text/javascript" src="www/js/services/chartPreparator.js"></script>
+
+<!-- Filters -->
+<script type="text/javascript" src="www/js/filters/viewDate.js"></script>
 
 </head>
 <body ng-app="app">

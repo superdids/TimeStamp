@@ -41,6 +41,16 @@ app.factory('DataHTTPService', function($http, TimeStampConfig, moment) {
 		});
 	};
 	
+	var state = '';
+	
+	var getState = function() {
+		return state;
+	};
+	
+	var setState = function(s) {
+		state = s;
+	};
+	
 	return {
 		getProjects: getProjects,
 		setProjects: setProjects,
@@ -48,6 +58,8 @@ app.factory('DataHTTPService', function($http, TimeStampConfig, moment) {
 		postProjectHTTP: postProjectHTTP,
 		getUsers: getUsers,
 		setUsers: setUsers,
-		getUsersHTTP: getUsersHTTP
+		getUsersHTTP: getUsersHTTP,
+		getState: getState,
+		setState: setState
 	};
 });

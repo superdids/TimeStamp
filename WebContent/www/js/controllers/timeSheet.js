@@ -6,10 +6,20 @@ app.controller('TimeSheetController', function($scope, AuthorizationService, mom
 	$scope.viewDate = new Date();
 
 	$scope.projects = [];
+	$scope.selected = {};
 	
 	$scope.$watch(DataHTTPService.getProjects, function(newValue, oldValue) {
 		$scope.projects = newValue;
+		if($scope.projects.length > 0) {
+			if($scope.emptyJSON($scope.selected)) {
+				$scope.selected = $scope.projects[0];
+			}
+		}
 	});
+	
+	$scope.emptyJSON = function(obj) {
+		return JSON.stringify(obj) === JSON.stringify({});
+	};
 	
 	$scope.isCellOpen = true;
 

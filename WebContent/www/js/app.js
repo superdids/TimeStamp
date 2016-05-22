@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ui.router', 'ui.bootstrap', 'mwl.calendar', 'chartjs', 'swaggerUi', 'ngSanitize']);
+var app = angular.module('app', ['ui.router', 'ui.bootstrap', 'mwl.calendar', 'chart.js', 'googlechart', 'swaggerUi', 'ngSanitize']);
 
 app.config(function($urlRouterProvider, $stateProvider, moment, calendarConfig) {
 
@@ -7,7 +7,8 @@ app.config(function($urlRouterProvider, $stateProvider, moment, calendarConfig) 
 		abstract: true,
 		views: {
 			'header@': {
-				templateUrl: 'www/templates/header.html'
+				templateUrl: 'www/templates/header.html',
+				controller: 'HeaderController'
 			}
 		}
 	}).state('login', {
@@ -52,6 +53,8 @@ app.config(function($urlRouterProvider, $stateProvider, moment, calendarConfig) 
 app.run(function($rootScope, $state, AuthorizationService, DataHTTPService) {
 	$rootScope.$on('$stateChangeStart', function(event, next, current) {
 
+		DataHTTPService.setState(next.url);
+		
 		if(next.url == '/Login') {
 			AuthorizationService.setUser('');
 			return;

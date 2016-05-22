@@ -6,7 +6,8 @@ app.controller('ProjectFormController', function($scope, moment, DataHTTPService
 	$scope.viewDate = new Date();
 
 	$scope.users = vm.users;
-
+	$scope.error = '';
+	
 	$scope.submitProject = function() {
 		var prepared = PostPreparatorService.prepareProjectPost({
 			name: $scope.name,
@@ -19,6 +20,9 @@ app.controller('ProjectFormController', function($scope, moment, DataHTTPService
 			$scope.selectedUsers = [];
 			$scope.timeSelection = {};
 			$scope.currentWeek = {};
+			$scope.error = '';
+		} else {
+			$scope.error = 's';
 		}
 	};
 

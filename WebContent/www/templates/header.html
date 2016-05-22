@@ -1,8 +1,11 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" ui-sref="app.api">API</a>
+
       <div class="navbar-brand navbar-brand-centered">TimeStamp</div>
+            
      </div>
+     <a ng-if="state === '/TimeStamp'" class="navbar-brand" ui-sref="app.api">API</a>
+      <a ng-if="state === '/API'" class="navbar-brand" ui-sref="app.timesheet">TimeStamp</a>
   </div>
 </nav>

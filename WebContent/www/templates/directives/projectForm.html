@@ -45,8 +45,12 @@
 
 			<button type="submit" ng-click="submitProject()"
 				class="btn btn-primary btn-block">Submit</button>
+				
+				<div class="alert alert-danger" ng-hide="error === ''">Something went wrong
+				<button class="alert alert-warning" ng-click="error = ''">Ok</button>
+				</div>
 		</fieldset>
 	</form>
 </div>
 
-<pre></pre>
+
